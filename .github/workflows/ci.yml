@@ -21,7 +21,7 @@ jobs:
         #env:
         #  GH_TOKEN: ${{ steps.app-token.outputs.token }}
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.MY_GH_TOKEN }}
         run: |
           if [[ ! $GITHUB_REF =~ ^refs/tags/${{ steps.get-version.outputs.version }} ]]; then
             echo "Tag '${{ steps.get-tag.outputs.tag }}' must be '${{ steps.get-version.outputs.version }}'." >&2
